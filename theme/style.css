@@ -13,10 +13,18 @@
   to { transform: translate(0px, 0px) }
 }
 
+@keyframes uglycolor {
+  0% { color: #00F9FF; }
+  25% { color: #FBFF9D; }
+  50% { color: #F400FF; }
+  75% { color: #FBFF9D; }
+  100% { color: #00F9FF; }
+}
+
 @keyframes whoaguhb {
-  0% { transform: scale(1); ; transform-origin: 0% 0%; }
-  50% { transform: scale(1.2); ; transform-origin: 0% 0%;  }
-  100% { transform: scale(1); ; transform-origin: 0% 0%;  } 
+  0% { transform: scale(1); transform-origin: 0% 0%; }
+  50% { transform: scale(1.2); transform-origin: 0% 0%;  }
+  100% { transform: scale(1); transform-origin: 0% 0%;  } 
 }
 
 html, body {
@@ -36,32 +44,41 @@ a:link    { color : #048DA4 ; text-decoration : none ;      }
 a:hover   { color : #7BC7D4 ; text-decoration : underline ; }
 a:visited { color : #205057 ; text-decoration : none ; }
 
-#banner {
+#banner h1 {
   width: 50%;
-  animation-name: zoomleft, fadein;
-  animation-duration: 2s, 8s;
-  animation-delay: 0s, 0s;
-  animation-iteration-count: 1, 1;
+  animation-name: zoomleft, fadein, whoaguhb;
+  animation-duration: 1s, 2s, 1s;
+  animation-delay: 0s, 0s, 2s;
+  animation-iteration-count: 1, 1, infinite;
+}
+
+a:hover {
+  animation-name: uglycolor;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
 }
 
 .entry-content {
   animation-name: zoomup;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode: backwards;
-  animation-delay: 2s;
+  animation-delay: 0.5s;
   overflow: hidden;
 }
 
 #menu {
-  animation-name: zoomleft;
-  animation-duration: 1s;
+  animation-name: zoomleft, fadein;
+  animation-duration: 1s, 2s;
+  animation-delay: 0.25s, 0s;
+  animation-fill-mode: backwards;
 }
 
-article.hentry {
+#post-list li {
   animation-name: zoomup;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode: backwards;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
   overflow: hidden;
 }
 
@@ -69,13 +86,27 @@ article.hentry {
   list-style-type: none;
 }
 
+#post-list li {
+  padding-left:1%;
+  border-radius:15px;
+  margin-bottom: 7px;
+}
+
+#post-list li:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#post-list li:nth-child(odd) {
+  /*background: rgba(0, 0, 0, 0.2);*/
+  background-image: linear-gradient(to bottom right, rgba(0,0,0,0.3), rgba(0,0,0,0), rgba(0,0,0,0));
+}
+
 #post-list li article footer {
   padding-left: 1%;
 }
 
-#post-list li article div {
+#post-list li article div p {
   padding-left: 2%;
-  text-overflow: ellipsis;
 }
 
 section > h2:first-child {
@@ -83,9 +114,10 @@ section > h2:first-child {
   animation-duration: 2s;
 }
 
-@keyframes lameanim {
-  from { color: #000000 }
-  to { color: #000000 }
+#contentinfo a, #banner h1 a {
+  animation-name: uglycolor;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
 
 body.home header.body h1:first-child a:hover { 
