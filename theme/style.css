@@ -1,8 +1,99 @@
+@keyframes fadein {
+  from { opacity: 0}
+  to { opacity: 1; }
+}
+
+@keyframes zoomup {
+  from { transform: translate(0px, 100vh) }
+  to { transform: translate(0px, 0px) }
+}
+
+@keyframes zoomleft {
+  from { transform: translate(100vh, 0px)}
+  to { transform: translate(0px, 0px) }
+}
+
+@keyframes whoaguhb {
+  0% { transform: scale(1); ; transform-origin: 0% 0%; }
+  50% { transform: scale(1.2); ; transform-origin: 0% 0%;  }
+  100% { transform: scale(1); ; transform-origin: 0% 0%;  } 
+}
+
 html, body {
   margin: 0;
   border: 0;
-  font-family: "Brush Script M7", cursive;
+  padding: 1%;
+  font-family: fantasy;
   font-size: 100%;
-  background-color: #FF0000;
-  color: #FF00EB;
+
+  color: #CDFCF7;
+  background-color: #0F2F3F;
+  background-image: linear-gradient(#000000, #092F51);
+  background-size: 200%;
+}
+
+a:link    { color : #048DA4 ; text-decoration : none ;      }
+a:hover   { color : #7BC7D4 ; text-decoration : underline ; }
+a:visited { color : #205057 ; text-decoration : none ; }
+
+#banner {
+  width: 50%;
+  animation-name: zoomleft, fadein;
+  animation-duration: 2s, 8s;
+  animation-delay: 0s, 0s;
+  animation-iteration-count: 1, 1;
+}
+
+.entry-content {
+  animation-name: zoomup;
+  animation-duration: 2s;
+  animation-fill-mode: backwards;
+  animation-delay: 2s;
+  overflow: hidden;
+}
+
+#menu {
+  animation-name: zoomleft;
+  animation-duration: 1s;
+}
+
+article.hentry {
+  animation-name: zoomup;
+  animation-duration: 2s;
+  animation-fill-mode: backwards;
+  animation-delay: 1s;
+  overflow: hidden;
+}
+
+#post-list {
+  list-style-type: none;
+}
+
+#post-list li article footer {
+  padding-left: 1%;
+}
+
+#post-list li article div {
+  padding-left: 2%;
+  text-overflow: ellipsis;
+}
+
+section > h2:first-child {
+  animation-name: fadein;
+  animation-duration: 2s;
+}
+
+@keyframes lameanim {
+  from { color: #000000 }
+  to { color: #000000 }
+}
+
+body.home header.body h1:first-child a:hover { 
+  color: #CDFCF7;
+}
+body.home header.body h1:first-child a:link { 
+  color: #CDFCF7;
+}
+body.home header.body h1:first-child a:visited { 
+  color: #CDFCF7;
 }
