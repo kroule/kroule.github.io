@@ -1,7 +1,8 @@
 html, body {
   margin: 0;
   border: 0;
+  font-family: "Brush Script M7", cursive;
   font-size: 100%;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #FF0000;
+  color: #FF00EB;
 }
